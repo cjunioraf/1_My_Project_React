@@ -1,11 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import SayMyName from './Components/SayMyName'; 
+import Pessoa from './Components/Pessoa'; 
+//fragments - List
+import List from './Components/List';
+import Evento from './Components/Evento';
+import EventoForm from './Components/EventoForm';
 
-function App() {
-  return (
+function App() { 
+
+  return (  
     <div className="App">
-      <h1>My project react</h1>
-      <p>teste no react</p>
+      {/* <SayMyName nome="Clécio"/>           
+      <Pessoa nome="Clécio" idade="44" profissao="Programador" imagem="https://via.placeholder.com/150"/>
+      <List/> */}
+      <h1>Renderização Condicional</h1>
+      {/* <Evento />   
+      <EventoForm/> */}
     </div>
   );
 }

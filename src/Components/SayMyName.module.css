@@ -1,0 +1,14 @@
+.frase_h1{
+    font-size: 24px;    
+    background-color: #696fca; 
+    color: #fff;   
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #424bc4;   
+}
+
+.frase_p{
+    font-weight: bold;
+    font-size: 20px;
+    color: #424bc4;    
+}
