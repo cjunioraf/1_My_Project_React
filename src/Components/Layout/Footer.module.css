@@ -1,0 +1,19 @@
+.footer { 
+    text-align: center;
+    background-color: #353e48;
+    color: #fff;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.list_footer{
+    display: flex;
+    list-style: none;
+     
+}
+
+.item_footer{
+    margin-right: 1em;
+}

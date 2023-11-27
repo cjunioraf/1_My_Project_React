@@ -1,25 +1,30 @@
-import './App.css';
-import SayMyName from './Components/SayMyName'; 
-import Pessoa from './Components/Pessoa'; 
-//fragments - List
-import List from './Components/List';
-import Evento from './Components/Evento';
-import EventoForm from './Components/EventoForm';
-import Condicional from './Components/Condicional';
+import React from 'react';
+// 👇️ import Routes instead of Switch 👇️
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+import Empresa from './Pages/Empresa';
+import Contato from './Pages/Contato';
+import Home from './Pages/Home';
+import Navbar from './Components/Layout/Navbar';
+import Footer from './Components/Layout/Footer';
 
 function App() { 
-
-  return (  
-    <div className="App">
-      {/* <SayMyName nome="Clécio"/>           
-      <Pessoa nome="Clécio" idade="44" profissao="Programador" imagem="https://via.placeholder.com/150"/>
-      <List/> */}
-      <h1>Renderização Condicional</h1>
-      {/* <Evento />   
-      <EventoForm/> */}
-      <Condicional/>
-    </div>
-  );
+  return(
+    <Router>
+      <div>      
+        <Navbar />      
+        {/* 👇️ Wrap your Route components in a Routes component */}
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/empresa" element={<Empresa />} />          
+          <Route exact path="/contato" element={<Contato />} />
+        </Routes>         
+      </div>
+      <div>
+        <Footer />
+      </div>        
+    </Router>
+  )
 }
 
 export default App;

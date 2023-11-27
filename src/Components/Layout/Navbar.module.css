@@ -1,0 +1,10 @@
+.list{
+    /* um ao lado do outro */
+    display: flex;
+    /* retirar o marcador do lado*/
+    list-style: none;        
+}
+
+.item{
+    margin-right: 1em;
+}
