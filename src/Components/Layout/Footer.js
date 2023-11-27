@@ -7,10 +7,10 @@ function Footer()
 
         <footer>
 
-            <ul className={style.list}>
-                <li className={style.item}><FaFacebook/></li>
-                <li className={style.item}><FaInstagram/></li>
-                <li className={style.item}><FaLinkedin/></li>
+            <ul className={style.list_footer}>
+                <li className={style.item_footer}><FaFacebook/></li>
+                <li className={style.item_footer}><FaInstagram/></li>
+                <li className={style.item_footer}><FaLinkedin/></li>
             </ul>   
             
         </footer>

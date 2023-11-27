@@ -1,6 +1,6 @@
 .footer { 
     text-align: center;
-    background-color: #353e48;
+    background-color: #757575;
     color: #fff;
     padding: 30px;
     position: absolute;
@@ -12,12 +12,15 @@
     display: flex;
     list-style: none;
     justify-content: center;
-    align-items: center;
-     
+    align-items: center;     
 }
 
-.item_footer{
+.list_footer li{
     margin-right: 1em;
+}
+
+.list_footer li:hover {
+    color: #474646;
 }
 
 .list_footer svg{
@@ -25,3 +28,10 @@
     cursor: pointer;
     color: #f2a340;        
 }
+
+.copy_right span{
+    color: #f2a340;
+}
+
+
+

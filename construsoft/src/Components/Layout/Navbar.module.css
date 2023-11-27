@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2a340;
+    padding: 1em;
+}
+
+.list{
+    /* um ao lado do outro */
+    display: flex;
+    /* retirar o marcador do lado*/
+    list-style: none;        
+}
+
+.item a {
+    margin-right: 1em;
+    font-size: 15px;
+    color: #757575;
+    text-decoration: none;
+    font-weight: 900; 
+}
+
+.item a:hover {
+    color: #474646;
+}   

@@ -1,0 +1,25 @@
+.container{
+    /* Largura máxima */
+    width: 1800px;
+    display: flex;
+    /* Espaça os elementos na linha horizontal */
+    justify-content: space-between;
+    margin: 0 auto;
+    /* Quando os elementos filhos ultrapassarem largura 1200px vão para baixo em nova linha */
+    flex-wrap: wrap;
+}
+/* ESSA CLASSE DE CSS É PROPAGADA NOS CONTAINER QUE VEM COM A PROPRIEDADE (PROPS)  */
+.min_height{
+    min-height: 75%;
+}
+
+.start{
+    justify-content: flex-start;    
+}
+
+.column{
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+

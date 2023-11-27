@@ -1,0 +1,14 @@
+/* Global da aplicação - INICIO */
+* {
+  padding: 0;
+  margin: 0;
+  /* INPUT NÃO ULTRAPASSAR A ÁREA DA DIV QUE ELES ESTÃO */
+  box-sizing: border-box;
+  font-family: 'Open Sans', 'sans-serif';
+}
+
+html, body, #root{
+  background-color: #efefef;
+  height: 100%;
+}
+/* Global da aplicação - FIM */
