@@ -1,4 +1,37 @@
 {
-    "projects": []
-
+  "projects": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Terreno"
+    },
+    {
+      "id": 2,
+      "name": "Planejamento"
+    },
+    {
+      "id": 3,
+      "name": "Fundação"
+    },
+    {
+      "id": 4,
+      "name": "Alvenaria"
+    },
+    {
+      "id": 5,
+      "name": "Estrutura"
+    },
+    {
+      "id": 6,
+      "name": "Elétrica e Hidráulica"
+    },
+    {
+      "id": 7,
+      "name": "Cobertura"
+    },
+    {
+      "id": 8,
+      "name": "Acabamento"
+    }
+  ]
 }
