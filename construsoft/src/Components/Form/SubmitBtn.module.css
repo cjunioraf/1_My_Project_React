@@ -3,9 +3,9 @@
     border: 2px solid #c28008;
     color: #555454;
     text-decoration: none;
-    padding: .5em 1em;
+    padding: .7em 1.2em;
     transition: 0.5s;
-
+    cursor: pointer;
 }
 
 .btn:hover {

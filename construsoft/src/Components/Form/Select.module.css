@@ -1,0 +1,22 @@
+.form_control{
+    display: flex;        
+    flex-direction: column;
+    margin-bottom: 1em;
+    width: 100%;
+    margin: 2em 0;
+}
+/* AQUI AFASTA O LABEL DA MARGEM E COLOCA EM NEGRITO */
+.form_control label{
+    margin-bottom: .6em;
+    font-weight: bold;
+}
+
+.form_control select{
+    /* ESPAÇAMENTO INTERNO DO IMPUT - PARA NÃO GRUDAR A FONTA AS BORDAS*/
+    padding: .7em;
+    /* QUADRADO */
+    border-radius: 0;
+    border: none;
+}
+
+
