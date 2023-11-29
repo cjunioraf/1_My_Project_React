@@ -1,57 +1,75 @@
-import { useState, useEffect } from "react"
 import styles from './Projeto.module.css'
-import Message from "../Layout/Message"
-//pegar a mensagem que foi gerado pelo navigate lá no Novoprojeto.js 
-import { useLocation } from "react-router-dom"
-import Container from '../Layout/Container';
-import Linkbutton from '../Layout/Linkbutton';
-import ProjetoCard from '../Project/ProjetoCard';
+
+import { useParams } from 'react-router-dom'
+
+import { useState, useEffect } from "react"
+import Loading from '../Layout/Loading'
+import Container from '../Layout/Container'
 
 function Projeto()
 {        
-    const [projects, setProjects] = useState([])
-    const location = useLocation()
-    //const statusMessage = location.state?.message || 'Mensagem não tratada.';  
-    let statusMessage = ""
-    
-    if (location.state){
-        statusMessage = location.state.message         
+    const { id } = useParams() 
+    const [project, setProject] = useState([])
+    const [showProjetoForm, setShowProjetoForm] = useState(false)
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            
+            fetch(`http://localhost:5000/projects/${id}`, {
+                method: 'GET',
+                headers:{'Content-type': 'application/json'}            
+            } ).then((resp) => resp.json())
+               .then((data) => {            
+                    //console.log(data)  
+                    setProject(data)
+                })  
+                .catch(err => console.log(err))
+
+        }, 300);          
+
+    }, [id])
+
+    function toggleProjetoForm(){
+        setShowProjetoForm(!showProjetoForm)    
     }
 
-    useEffect(() => 
-    {
-        fetch('http://localhost:5000/projects', {
-        method: 'GET',
-        headers:{'Content-type': 'application/json'}
-        }).then((resp) => resp.json())
-          .then((data) => {            
-            setProjects(data)
-           })  
-          .catch(err => console.log(err))
-    }, [])  
-    
     return(
-        <div className={styles.project_container}>
+        <>
+            {project.name ? (
 
-            <div className={styles.title_container}>
-                <h1>Meus Projetos</h1>                                
-                <Linkbutton to="/novoprojeto" text="Criar Projeto"/>            
-            </div>
-            {/* SE O statusMessage != "" */}
-            { statusMessage && <Message msg={statusMessage} type="success"/> }       
-            <Container customClass="start">                
-                {projects.length > 0 && (
-                    projects.map((prj) => <ProjetoCard 
-                        name={prj.name} 
-                        id={prj.id} 
-                        budget={prj.budget}
-                        category={prj.category}                         
-                        key={prj.id}
-                    /> )
-                )}
+                <div>
+                    <Container customClass="column">
+                        
+                        <div>
+                            <h1>Projeto: {project.name} </h1>
+                            
+                            <button onClick={toggleProjetoForm}> 
+                                {!showProjetoForm ? 'Editar Projeto' : 'Fechar' } 
+                            </button>
 
-            </Container>     
-        </div>        
+                            {!showProjetoForm ? 
+                            (
+                                <div>
+                                    <p><span>Etapa:</span> {project.category.name}</p> 
+                                    <p><span>Total Orçamento:</span> R${project.budget}</p> 
+                                    <p><span>Total Utilizado:</span> R${project.custo}</p>
+                                </div>                                   
+
+                            ) : (
+                                <div>
+                                    <p>Detalhes do projeto</p>                                           
+                                </div>
+                            )} 
+
+                        </div>
+
+                    </Container>
+                </div>
+
+            )    
+            : (<Loading />)}                       
+        </>
     )       
 }
 

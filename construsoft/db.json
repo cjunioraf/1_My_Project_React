@@ -1,28 +1,6 @@
 {
   "projects": [
     {
-      "name": "CLECIO",
-      "budget": "250000",
-      "category": {
-        "id": "2",
-        "name": "Planejamento"
-      },
-      "custo": 0,
-      "etapas": [],
-      "id": 1
-    },
-    {
-      "name": "OBRA OTTO",
-      "budget": "258000",
-      "category": {
-        "id": "2",
-        "name": "Planejamento"
-      },
-      "custo": 0,
-      "etapas": [],
-      "id": 2
-    },
-    {
       "name": "OTTO FERREIRA",
       "budget": "54654",
       "category": {
@@ -34,11 +12,11 @@
       "id": 8
     },
     {
-      "name": "OBRA FABIANA",
-      "budget": "288000",
+      "name": "CLECIO ALVES FERREIRA JUNIOR",
+      "budget": "450000",
       "category": {
-        "id": "7",
-        "name": "Cobertura"
+        "id": "2",
+        "name": "Planejamento"
       },
       "custo": 0,
       "etapas": [],

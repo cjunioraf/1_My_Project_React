@@ -1,0 +1,14 @@
+.loader_container{
+    /* LARGURA */
+    width: 100%;
+    /* ALTURA */
+    height: 100%;
+    display: flex;
+    /* OCUPA TODA ÁREA E COLOCA O LOADER NO MEIO */
+    justify-content: center;
+    align-items: center;
+}
+
+.loader{
+    width: 50px;
+}

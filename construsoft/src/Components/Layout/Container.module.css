@@ -16,7 +16,7 @@
 .start{
     justify-content: flex-start;    
 }
-
+/* USADO NA PAGE pages/Projeto */
 .column{
     flex-direction: column;
     justify-content: flex-start;

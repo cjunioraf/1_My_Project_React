@@ -4,11 +4,12 @@ import Empresa from './Components/Pages/Empresa';
 import Contato from './Components/Pages/Contato';
 import Home from './Components/Pages/Home';
 import Novoprojeto from './Components/Pages/Novoprojeto';
-import Projeto from './Components/Pages/Projeto';
+import Projetos from './Components/Pages/Projetos';
 
 import Navbar from './Components/Layout/Navbar';
 import Footer from './Components/Layout/Footer';
 import Container from './Components/Layout/Container';
+import Projeto from './Components/Pages/Projeto';
 
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
 
           <Routes>          
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/empresa" element={<Empresa />} />          
-              <Route exact path="/contato" element={<Contato />} />
-              <Route exact path="/novoprojeto" element={<Novoprojeto />} />          
-              <Route exact path="/projeto" element={<Projeto />} /> 
+              <Route path="/empresa" element={<Empresa />} />          
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/novoprojeto" element={<Novoprojeto />} />          
+              <Route path="/projetos" element={<Projetos />} />               
+              <Route path="/projeto/:id" element={<Projeto />} /> 
           </Routes>        
 
       </Container>
