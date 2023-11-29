@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Routes, Link, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import Empresa from './Components/Pages/Empresa';
 import Contato from './Components/Pages/Contato';
@@ -15,11 +15,7 @@ function App() {
     <Router>
 
       <div>
-        <Navbar />
-        {/* <Link to="/">Home</Link>
-        <Link to="/empresa">Empresa</Link>
-        <Link to="/contato">Contato</Link>
-        <Link to="/novoprojeto">Novo Projeto</Link> */}
+        <Navbar />        
       </div>
       <Container customClass="min_height">
 

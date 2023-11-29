@@ -6,8 +6,7 @@ function Novoprojeto()
 {        
     const navigate = useNavigate()
 
-    function createPost(project){
-
+    function createPost(project){        
         //inicialização do projeto 
         project.custo = 0
         project.etapas = []
@@ -17,10 +16,9 @@ function Novoprojeto()
             headers:{'Content-type': 'application/json'},
             body: JSON.stringify(project)
             }).then((resp) => resp.json())
-              .then((data) => {
-                console.log(data)
-                //redireciona para a página do projeto. 
-                navigate("/projeto", { message: "Projeto criado com sucesso!" });
+              .then((data) => {                
+                const statusMessage = 'Projeto criado com sucesso!'
+                navigate('/projeto', { state: { message: statusMessage } }) 
               })  
               .catch(err => console.log(err))
     }

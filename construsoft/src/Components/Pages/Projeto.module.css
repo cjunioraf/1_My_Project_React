@@ -1,0 +1,12 @@
+.project_container{
+    padding: 2em;
+} 
+
+.title_container{
+    /* ITENS FICARAM UM AO LADO DO OUTRO  */
+    display: flex;
+    /* CADA UM PARA O SEU CANTO */
+    justify-content: space-between;
+    /* AFASTA UM PROJETO DO OUTRO */
+    margin-bottom: 2em;
+}

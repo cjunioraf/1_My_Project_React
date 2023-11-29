@@ -22,13 +22,11 @@ function ProjetoForm({handleSubmit, btntext, projectData})
     
     const submit = (e) => {
         e.preventDefault()
-        //console.log(project)
         handleSubmit(project)
     }
 
     function handleChange(e) {
-        setproject({...project, [e.target.name]: e.target.value})        
-        console.log(project)
+        setproject({...project, [e.target.name]: e.target.value})                
     }
 
     function handleCategory(e) {
@@ -61,7 +59,9 @@ function ProjetoForm({handleSubmit, btntext, projectData})
                     handleOnChange = {handleCategory}
                     value={ project.category ? project.category.id : ''}
             />
+
             <SubmitBtn text={btntext}/>      
+            
         </form>
     )       
 }
