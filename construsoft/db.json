@@ -21,7 +21,7 @@
       "custo": 0,
       "etapas": [],
       "id": 2
-    },        
+    },
     {
       "name": "OTTO FERREIRA",
       "budget": "54654",
@@ -32,7 +32,18 @@
       "custo": 0,
       "etapas": [],
       "id": 8
-    }    
+    },
+    {
+      "name": "OBRA FABIANA",
+      "budget": "288000",
+      "category": {
+        "id": "7",
+        "name": "Cobertura"
+      },
+      "custo": 0,
+      "etapas": [],
+      "id": 9
+    }
   ],
   "categories": [
     {

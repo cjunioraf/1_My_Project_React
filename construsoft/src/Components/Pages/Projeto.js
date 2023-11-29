@@ -1,12 +1,15 @@
+import { useState, useEffect } from "react"
 import styles from './Projeto.module.css'
 import Message from "../Layout/Message"
 //pegar a mensagem que foi gerado pelo navigate lá no Novoprojeto.js 
 import { useLocation } from "react-router-dom"
 import Container from '../Layout/Container';
 import Linkbutton from '../Layout/Linkbutton';
+import ProjetoCard from '../Project/ProjetoCard';
 
 function Projeto()
 {        
+    const [projects, setProjects] = useState([])
     const location = useLocation()
     //const statusMessage = location.state?.message || 'Mensagem não tratada.';  
     let statusMessage = ""
@@ -15,6 +18,18 @@ function Projeto()
         statusMessage = location.state.message         
     }
 
+    useEffect(() => 
+    {
+        fetch('http://localhost:5000/projects', {
+        method: 'GET',
+        headers:{'Content-type': 'application/json'}
+        }).then((resp) => resp.json())
+          .then((data) => {            
+            setProjects(data)
+           })  
+          .catch(err => console.log(err))
+    }, [])  
+    
     return(
         <div className={styles.project_container}>
 
@@ -24,8 +39,17 @@ function Projeto()
             </div>
             {/* SE O statusMessage != "" */}
             { statusMessage && <Message msg={statusMessage} type="success"/> }       
-            <Container customClass="start">
-                <p>Projetos....</p>
+            <Container customClass="start">                
+                {projects.length > 0 && (
+                    projects.map((prj) => <ProjetoCard 
+                        name={prj.name} 
+                        id={prj.id} 
+                        budget={prj.budget}
+                        category={prj.category}                         
+                        key={prj.id}
+                    /> )
+                )}
+
             </Container>     
         </div>        
     )       
