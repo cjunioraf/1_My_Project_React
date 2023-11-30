@@ -1,6 +1,6 @@
 .container{
     /* Largura máxima */
-    width: 1800px;
+    width: 1700px;
     display: flex;
     /* Espaça os elementos na linha horizontal */
     justify-content: space-between;

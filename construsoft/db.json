@@ -2,13 +2,26 @@
   "projects": [
     {
       "name": "OTTO SCHRODER FERREIRA",
-      "budget": "6000",
+      "budget": "80000",
       "category": {
-        "id": "4",
-        "name": "Alvenaria"
+        "id": "3",
+        "name": "Fundação"
       },
-      "custo": 0,
-      "etapas": [],
+      "custo": 500,
+      "etapas": [
+        {
+          "name": "CLECIO",
+          "custo": "200",
+          "description": "MÃO DE OBRA",
+          "id": "ef5338b9-128f-4041-a947-e7d9c02b850e"
+        },
+        {
+          "name": "CLECIO 4",
+          "custo": "300",
+          "description": "MÃO DE OBRA",
+          "id": "c8ac64fa-367c-4651-833b-ff4b7a77324b"
+        }
+      ],
       "id": 8
     },
     {
