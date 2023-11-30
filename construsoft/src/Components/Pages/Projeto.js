@@ -100,11 +100,8 @@ function Projeto()
 
         }).then((resp) => resp.json())
           .then((data) => { 
-            console.log(data)
-               //setProject(data)
-               //setShowProjetoForm(false)              
-               //setMessage("Projeto alterado com sucesso!")    
-               //setTypemsg("success") 
+            console.log(data)   
+            setShowServiceForm(false)            
          })  
          .catch(err => console.log(err))
     }    
