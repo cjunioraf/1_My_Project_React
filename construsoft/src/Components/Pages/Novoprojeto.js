@@ -6,19 +6,19 @@ function Novoprojeto()
 {        
     const navigate = useNavigate()
 
-    function createPost(project){        
+    function createPost(projectForm){        
         //inicialização do projeto 
-        project.custo = 0
-        project.etapas = []
+        projectForm.custo = 0
+        projectForm.etapas = []
 
         fetch('http://localhost:5000/projects', {
             method: 'POST',
             headers:{'Content-type': 'application/json'},
-            body: JSON.stringify(project)
+            body: JSON.stringify(projectForm)
             }).then((resp) => resp.json())
               .then((data) => {                
                 const statusMessage = 'Projeto criado com sucesso!'
-                navigate('/projeto', { state: { message: statusMessage } }) 
+                navigate('/projetos', { state: { message: statusMessage } }) 
               })  
               .catch(err => console.log(err))
     }

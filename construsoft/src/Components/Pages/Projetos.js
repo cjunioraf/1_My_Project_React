@@ -59,7 +59,7 @@ function Projetos()
 
             <div className={styles.title_container}>
                 <h1>Meus Projetos</h1>                                
-                <Linkbutton to="/novoprojeto" text="Criar Projeto"/>            
+                <Linkbutton to="/novoprojeto" text="Criar Projeto (2)"/>            
             </div>
             {/* SE O statusMessage != "" */}
             { statusMessage && <Message msg={statusMessage} type="success"/> }   

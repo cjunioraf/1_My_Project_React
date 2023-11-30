@@ -8,7 +8,7 @@ import style from './ProjetoForm.module.css'
 function ProjetoForm({handleSubmit, btntext, projectData})
 {        
     const[categories, setCategories] = useState([])
-    const[project, setproject] = useState(projectData || {})
+    const[projectForm, setprojectForm] = useState(projectData || {})
     
     useEffect(() => 
     {
@@ -22,15 +22,15 @@ function ProjetoForm({handleSubmit, btntext, projectData})
     
     const submit = (e) => {
         e.preventDefault()
-        handleSubmit(project)
+        handleSubmit(projectForm)
     }
 
     function handleChange(e) {
-        setproject({...project, [e.target.name]: e.target.value})                
+        setprojectForm({...projectForm, [e.target.name]: e.target.value})                
     }
 
     function handleCategory(e) {
-        setproject({...project, category:{
+        setprojectForm({...projectForm, category:{
             id: e.target.value,
             name: e.target.options[e.target.selectedIndex].text } 
         })                 
@@ -44,20 +44,20 @@ function ProjetoForm({handleSubmit, btntext, projectData})
                    name="name" 
                    placeholder="Insira o nome do projeto"
                    handleOnChange = {handleChange}
-                   value= {project.name ? project.name : ''}
+                   value= {projectForm.name ? projectForm.name : ''}
             />
             <Input type="number" 
                    text="Orçamento Total do Projeto R$" 
                    name="budget" 
                    placeholder="Insira o orçamento total do projeto"
                    handleOnChange = {handleChange}
-                   value= {project.budget ? project.budget : ''}
+                   value= {projectForm.budget ? projectForm.budget : ''}
             />
             <Select text="Selecione uma Etapa" 
                     options={categories} 
                     name="category_id"
                     handleOnChange = {handleCategory}
-                    value={ project.category ? project.category.id : ''}
+                    value={ projectForm.category ? projectForm.category.id : ''}
             />
 
             <SubmitBtn text={btntext}/>      
