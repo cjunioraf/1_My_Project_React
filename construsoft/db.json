@@ -7,19 +7,25 @@
         "id": "3",
         "name": "Fundação"
       },
-      "custo": 500,
+      "custo": 11600,
       "etapas": [
         {
-          "name": "CLECIO",
-          "custo": "200",
-          "description": "MÃO DE OBRA",
-          "id": "ef5338b9-128f-4041-a947-e7d9c02b850e"
+          "name": "CONCRETO PRONTO",
+          "custo": "10000",
+          "description": "COMPRA DO CONCRETO PRONTO",
+          "id": "ea05317a-696a-4b3f-b877-a039179438bc"
         },
         {
-          "name": "CLECIO 4",
-          "custo": "300",
-          "description": "MÃO DE OBRA",
-          "id": "c8ac64fa-367c-4651-833b-ff4b7a77324b"
+          "name": "MÃO DE OBRA 04/12/2023",
+          "custo": "800",
+          "description": "MÃO DE OBRA 04/12/2023",
+          "id": "8ec9cb78-556e-4eb2-ad4f-87c1464cf5a2"
+        },
+        {
+          "name": "MÃO DE OBRA 25/11/2023",
+          "custo": "800",
+          "description": "MÃO DE OBRA 25/11/2023",
+          "id": "0817414a-4a63-44d9-97c6-b51056d565ad"
         }
       ],
       "id": 8

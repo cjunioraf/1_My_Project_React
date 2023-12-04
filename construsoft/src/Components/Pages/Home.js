@@ -8,7 +8,7 @@ function Home()
         <section className={style.home_container}>
             <h1>Bem vindo ao <span>ConstruSoft</span> </h1>
             <p>Comece a gerenciar seu projeto de construção ou reforma.</p>
-            <Linkbutton to="/novoprojeto" text="Criar Projeto (1)"/>
+            <Linkbutton to="/novoprojeto" text="Criar Projeto"/>
             <img src={imagem} alt='ConstruSoft'></img>
         </section>
     )        

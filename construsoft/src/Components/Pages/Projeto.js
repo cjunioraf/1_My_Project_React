@@ -100,8 +100,10 @@ function Projeto()
 
         }).then((resp) => resp.json())
           .then((data) => { 
-            console.log(data)   
-            setShowServiceForm(false)            
+            //console.log(data)   
+            //OCULTA O ADICIONAR SERVIÇO.
+            setShowServiceForm(false)  
+                      
          })  
          .catch(err => console.log(err))
     }    
@@ -114,8 +116,36 @@ function Projeto()
         setShowServiceForm(!showServiceForm)    
     }
 
-    function removeEtapa(){
+    function removeEtapa(id, custo){
+        
         console.log("Remover a etapa") 
+
+        const etapasUpdate = project.etapas.filter(
+            (etapa) => etapa.id !== id
+        ) 
+
+        const projectUpdate = project
+        
+        projectUpdate.etapas = etapasUpdate
+        projectUpdate.custo = parseFloat(projectUpdate.custo) - parseFloat(custo)
+
+        fetch(`http://localhost:5000/projects/${projectUpdate.id}`, {       
+            //PATCH - SÓ ATUALIZA O QUE EU MANDAR DIFERENTE 
+            method: 'PATCH',
+            headers:{'Content-type': 'application/json'},
+            //body envia para o JSON alterar meu arquivo db.json        
+            body: JSON.stringify(projectUpdate)               
+
+        }).then((resp) => resp.json())
+          .then((data) => { 
+            console.log(data) 
+            setProject(projectUpdate)  
+            setEtapas(etapasUpdate)  
+            setMessage('Serviço removido com sucesso!')   
+            setTypemsg("success")                   
+         })  
+         .catch(err => console.log(err))
+
     }
 
     return(
@@ -172,9 +202,11 @@ function Projeto()
                         <h2>Serviços</h2>
                         
                         <Container customClass="start">
+
                             {etapas.length > 0 && 
                                 
                                 etapas.map((etapa) => (
+                                    // CHAMA ServiceCard PASSANDO OS PARÂMETROS    
                                     <ServiceCard     
                                         name={etapa.name} 
                                         id={etapa.id} 
